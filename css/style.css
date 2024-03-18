@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #0056b3; /* Primary interaction color */
+    --secondary-color: #f8f8f8; /* Secondary background color */
+    --text-color: #333; /* Primary text color */
+    --border-color: #ddd; /* Border color for elements */
+    --hover-background-color: #0029b3; /* Hover state background color */
+    --font-family: 'Roboto', sans-serif; /* Default font family */
+    --border-radius: 4px; /* Default border radius */
+    --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Default box shadow */
+    --transition-speed: 0.3s; /* Default transition speed for interactions */
+    --spacing-unit: 10px; /* Base unit for all spacings and gaps */
+}
+
+body, html {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.playcricket-results, .custom-dropdown, #playcricket-show-results {
+    margin: var(--spacing-unit) 0;
+	margin-top: 20px;
+}
+
+.custom-dropdown select {
+    display: none;
+}
+
+.custom-dropdown .selected-value {
+    padding: var(--spacing-unit) var(--spacing-unit);
+    font-size: 1em;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.custom-dropdown .selected-value:hover {
+    background-color: var(--hover-background-color);
+	color: #fff;
+}
+
+.custom-dropdown .options-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+    z-index: 10;
+}
+
+.custom-dropdown .options-container.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-dropdown .option {
+    padding: var(--spacing-unit);
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+.custom-dropdown .option:hover {
+    transform: scale(1.05);
+    background-color: var(--hover-background-color);
+	color: #fff;
+}
+
+#playcricket-show-results {
+    padding: var(--spacing-unit) var(--spacing-unit);
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    margin-top: var(--spacing-unit);
+    transition: background-color var(--transition-speed) ease;
+}
+
+#playcricket-show-results:hover {
+    background-color: #6d001d;
+	color: #fff;
+}
+
+.playcricket-match-header {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit); /* Adjusted for consistency */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: background-color var(--transition-speed) ease;
+    display: flex;
+    justify-content: start; /* Align items to the start */
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: var(--spacing-unit);
+}
+
+.playcricket-match-header:hover {
+    background-color: #6d001d;
+	color: #fff;
+}
+
+/* Add a clear visual separation between results */
+.playcricket-match-header + .playcricket-match-header {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.club-name, .vs, .result-description {
+    font-weight: 600;
+    margin: 0; /* Reset margin */
+    padding: 0 var(--spacing-unit); /* Apply horizontal padding */
+    white-space: nowrap; /* Prevent wrapping to new line */
+    text-overflow: ellipsis; /* Handle overflowing text gracefully */
+    overflow: hidden; /* Hide overflow */
+}
+
+.vs {
+    flex-shrink: 0; /* Prevent 'vs' from shrinking */
+    padding: 0 var(--spacing-unit); /* Horizontal padding for 'vs' */
+}
+
+.result-description {
+    margin-left: auto; /* Push result-description to the end of the container */
+    padding-right: var(--spacing-unit); /* Padding on the right */
+}
+
+.match-date {
+    flex-shrink: 0; /* Prevent date from shrinking */
+    padding-left: var(--spacing-unit); /* Padding on the left */
+    margin-left: auto; /* Ensure it stays to the right */
+	position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.playcricket-match-summary {
+    display: none;
+    background-color: var(--secondary-color);
+    padding: var(--spacing-unit);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.playcricket-teams-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: var(--spacing-unit);
+}
+
+.playcricket-team-column {
+    flex: 1;
+    max-width: calc(50% - (var(--spacing-unit) * 2));
+    background-color: var(--secondary-color);
+    padding: var(--spacing-unit);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+.playcricket-team-column h5 {
+    margin-bottom: var(--spacing-unit);
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.playcricket-team-column p {
+    margin: var(--spacing-unit) 0;
+}
+@media (max-width: 767px) {
+    .playcricket-match-header {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text for all child elements */
+    }
+    .club-name, .vs, .result-description, .match-date {
+        width: 100%; /* Full width for small screens */
+        padding: 5px 0; /* Add some vertical padding */
+    }
+    .playcricket-match-summary {
+        flex-direction: column; /* Stack summary items vertically */
+        align-items: center; /* Center summary items horizontally */
+    }
+}
+

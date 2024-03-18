@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* Define CSS variables for color scheme, font, border, and shadow */
+  --primary-color: #007bff;
+  --secondary-color: #fcf0f1;
+  --text-color: #333;
+  --text-color-light: #00529b;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --font-family: "Roboto", sans-serif;
+  --border-radius: 5px;
+  --box-shadow: 0 2px 6px var(--shadow-color);
+  --transition-speed: 0.3s;
+  --spacing-unit: 10px;
+}
+
+body,
+html {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Refactor match details to use CSS variables */
+.playcricket-match-details {
+  padding: var(--spacing-unit);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background-color: var(--secondary-color);
+  box-shadow: var(--box-shadow);
+}
+
+/* Utilize flexbox for innings for consistent alignment */
+.playcricket-innings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: var(--spacing-unit);
+  padding: var(--spacing-unit);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+/* Update team name styles with variables */
+.playcricket-innings h4 {
+  margin-bottom: var(--spacing-unit);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color-light);
+}
+
+/* Maintain center alignment for headers */
+.playcricket-innings h3 {
+  text-align: center;
+}
+
+/* Standardize paragraph styles within innings */
+.playcricket-innings p {
+  margin: var(--spacing-unit) 0;
+}
+
+/* Adjustments for additional info styling */
+.batter-additional-info {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-top: var(--spacing-unit);
+  text-align: center;
+}
+
+/* Consistent team container styles */
+.playcricket-home-team,
+.playcricket-away-team {
+  margin: var(--spacing-unit) 0;
+  padding: var(--spacing-unit);
+  background-color: #f7f7f7;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+/* Maintain paragraph styles within team containers */
+.playcricket-home-team p,
+.playcricket-away-team p {
+  margin: var(--spacing-unit) 0;
+}
+
+/* Flex container for teams */
+.playcricket-teams-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-unit);
+  justify-content: center;
+}
+
+/* Standardize team styles and hover effects */
+.playcricket-team {
+  padding: var(--spacing-unit);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  text-align: center;
+}
+
+.playcricket-team:hover {
+  background-color: #f5f5f5;
+}
+
+/* Styles for players' details and interactions */
+.playcricket-players-details {
+  display: flex;
+
+  justify-content: space-between;
+  margin-top: var(--spacing-unit);
+}
+
+.batter-main {
+  transition: transform var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+.batter-main:hover {
+  color: var(--primary-color);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.batter-main.active {
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* Styles for batsmen and bowlers list with modern aesthetics */
+.playcricket-batters,
+.playcricket-bowlers {
+  width: calc(50% - var(--spacing-unit));
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-unit);
+  margin: 0 var(--spacing-unit) var(--spacing-unit) 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.club-crest {
+    height: 20px !important; 
+    width: auto;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Individual batter and bowler entry styling */
+.batter,
+.bowler {
+  padding: var(--spacing-unit);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.batter:last-child,
+.bowler:last-child {
+  border-bottom: none;
+}
+
+/* List styles for players */
+.playcricket-batters ul,
+.playcricket-bowlers ul {
+  padding-left: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 767px) {
+  .playcricket-batters,
+  .playcricket-bowlers {
+    width: 100%;
+    margin: var(--spacing-unit) 0;
+  }
+
+  .playcricket-players-details {
+    flex-direction: column;
+  }
+
+	 /* Add this inside your media query to target .club-crest images on mobile */
+  .club-crest {
+   height: 20px; /* or any other size that looks good on mobile */
+   width: auto; /* maintain aspect ratio */
+  }
+}
+
+/* Enhance match details and innings containers with modern styles */
+.playcricket-match-details,
+.playcricket-innings {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}

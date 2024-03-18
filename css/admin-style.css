@@ -1,0 +1,230 @@
+.wrap h1 {
+    color: #0073aa;
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+  }
+  
+  #playcricket-club-search-container {
+    display: none; /* Hide the club search form initially */
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #club-search-results {
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  .club-result {
+    padding: 8px 5px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center club results */
+  }
+  
+  .club-result:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .club-result:last-child {
+    border-bottom: none;
+  }
+  
+  .club-result button {
+    margin-left: 10px; /* Adds space to the left of the button */
+  }
+
+  .club-error {
+    color: #ff0000;
+    font-weight: bold;
+    text-align: center; /* Center error messages */
+  }
+  
+  /* Additional styles for better layout */
+  .form-table th,
+  .form-table td {
+    padding: 15px;
+    vertical-align: top;
+  }
+  
+  .form-table th {
+    width: 20%;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .form-table input[type="text"],
+  .form-table button {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+    margin-bottom: 15px; /* Space out inputs/buttons */
+  }
+  
+  .form-table input[type="text"]:focus,
+  .form-table button:focus {
+    border-color: #0073aa;
+    outline: 0;
+  }
+  
+  .form-table button.button-secondary {
+    background-color: #0073aa;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-top: 5px;
+    display: block; /* Make the button full width */
+    width: calc(100% - 30px); /* Account for padding */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-table button.button-secondary:hover {
+    background-color: #005a87;
+  }
+  
+  /* Customization for submit button */
+  .wp-core-ui .button-primary {
+    background: #0073aa;
+    border-color: #0073aa #006799 #006799;
+    box-shadow: none;
+    text-shadow: none;
+    display: block; /* Make the submit button full width */
+    width: calc(100% - 30px); /* Account for padding */
+    margin-top: 20px; /* Space above the submit button */
+    margin-bottom: 20px; /* Space below the submit button */
+  }
+  
+  .wp-core-ui .button-primary:hover,
+  .wp-core-ui .button-primary:focus {
+    background: #006799;
+    border-color: #006799;
+  }
+  
+  /* Style the container with a modern card look */
+  
+  .wrap {
+    max-width: 600px; /* Set a max-width for the wrap */
+    margin: 20px auto; /* Center the wrap on the page with margin on top and bottom*/
+    background: #fff; /* Set a white background for the wrap */
+    padding: 40px; /* Add padding inside the wrap */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Add a subtle shadow to the wrap */
+    border-radius: 8px; /* Round the corners of the wrap */
+  }
+  
+  /* Style the instructions text*/
+  .instructions {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 20px; /* Add space below the instructions */
+  }
+  
+  /* Ensure that the form elements look consistent and aligned */
+  .form-table {
+    width: 100%; /* Full width */
+  }
+  
+  /* Style the confirm button */
+  
+  .confirm-settings {
+    width: auto; /* Auto-width based on text content */
+    padding: 10px 20px; /* Padding inside the button */
+    margin-top: 20px; /* Space above the button */
+    margin-bottom: 20px; /* Space below the button */
+    margin-left: calc(50% - (button-width / 2)); /* Center the button */
+    font-size: 16px; /* Make the text larger and more clickable */
+    background-color: #0073aa; /* Use brand color for the button */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Round the corners of the button */
+    color: white; /* White text */
+    text-align: center; /* Center the text inside the button */
+    display: block; /* Block-level so it sits on its own line */
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  #confirm-settings:hover {
+    background-color: #005a87; /* Darken the button background on hover */
+  }
+  
+  /* Style the input fields to look modern */
+  .form-table input[type="text"],
+  .form-table input[type="url"] {
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Round the corners */
+    padding: 10px; /* Add some padding inside the input fields */
+    width: calc(100% - 22px); /* Account for border and padding */
+    margin-bottom: 10px; /* Space below the inputs */
+  }
+  
+  .form-table input[type="text"]:focus,
+  .form-table input[type="url"]:focus {
+    border-color: #0073aa; /* Highlight with brand color on focus */
+    outline: none; /* Remove the default focus outline */
+  }
+  
+  /* Adjust the color picker to fit into the new design */
+  .color-picker-wrap {
+    position: relative; /* Position relative to contain absolute elements */
+    display: inline-block; /* Allow it to sit next to other elements */
+    margin: 0 auto; /* Center it horizontally */
+  }
+  
+  .color-picker-wrap .wp-picker-container {
+    position: absolute; /* Absolute positioning relative to parent */
+    top: 0; /* Align to the top */
+    left: 50%; /* Move to half the parent's width */
+    transform: translateX(-50%); /* Center the picker */
+  }
+  
+  /* Enhance the visibility of the image preview */
+  #image-preview {
+    border: 1px solid #ddd; /* Add a border */
+    padding: 10px; /* Add padding */
+    text-align: center; /* Center the image */
+    margin-top: 10px; /* Space above the image */
+  }
+  
+  #image-preview img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Style the search button */
+  #club-search-button {
+    background-color: #0073aa; /* Use brand color */
+    color: white; /* Contrast with background */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove the border */
+    border-radius: 4px; /* Round the corners */
+    margin-left: 10px; /* Space from the input field */
+  }
+  
+  #club-search-button:hover {
+    background-color: #005a87; /* Darken on hover */
+  }
+  
+  /* Align the "Save Changes" button with the rest of the content */
+  .wp-core-ui .button-primary {
+    margin-left: calc(50% - (button-width / 2)); /* Center the button */
+  }
+  
